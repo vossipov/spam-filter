@@ -4,8 +4,9 @@ from typing import List
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
+import nltk
 
-TOKEN_RE = re.compile(r'[\w+]')
+TOKEN_RE = re.compile(r'\w+')
 
 
 class Tokenizer(ABC):
@@ -24,7 +25,7 @@ class Tokenizer(ABC):
 class SimpleTokenizer(Tokenizer):
     """
         Simple word tokenizer
-        which extract continuous sequence of letters or numbers
+        which extract continuous sequence of letters or numbers using regex
     """
 
     def tokenize(self, text: str, min_token_size: int = 4):
@@ -40,14 +41,25 @@ class StemmerTokenizer(Tokenizer):
     """
 
     def tokenize(self, text: str, min_token_size: int):
-        text = text.lower()
-        words = word_tokenize(text)
-        words = [w for w in words if len(w) > min_token_size]
+        assert text is not None
+        try:
+            text = text.lower()
+            words = word_tokenize(text)
+            words = [w for w in words if len(w) > min_token_size]
 
-        stop_words = stopwords.words('english')
-        words = [w for w in words if words not in stop_words]
+            stop_words = stopwords.words('english')
+            words = [w for w in words if w not in stop_words]
 
-        stemmer = PorterStemmer()
-        words = [stemmer.stem(w) for w in words]
+            stemmer = PorterStemmer()
+            words = [stemmer.stem(w) for w in words]
 
-        return words
+            return words
+        except LookupError:
+            nltk.download('punkt')
+            self.tokenize(text, min_token_size)
+
+
+class NGramTokenizer(Tokenizer):
+
+    def tokenize(self, text: str, min_token_size: int):
+        pass
