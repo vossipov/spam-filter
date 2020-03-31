@@ -1,9 +1,16 @@
 Content:  
 * [Description](#description)  
 * [Bayes Theorem](#what-is-bayes-theorem)  
+* [TFIDF](#tfidf)
 * [Install](#install)
-## Description
+## Prerequisites
+* [Python 3.7](https://www.python.org/downloads/release/python-377/)
+* [NumPy](https://numpy.org/)
+* [nltk](https://www.nltk.org/)
+* [pandas](https://pandas.pydata.org/)
 
+## Description
+Soon...
 
 ## What is Bayes Theorem?
 Bayes' Theorem is a simple mathematical formula used for calculating conditional probabilities. 
@@ -28,6 +35,10 @@ and
 how important a word is to a document in a collection or corpus
 
 ## Install
-
-## Usage
+    $ pip install -r requirements.txt
+    
+or
+    
+    $ python setup.py install
 ## References
+Soon...
