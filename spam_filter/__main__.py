@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 
 from .nlp_utils.classifier import NaiveBayesClassifier
+from .nlp_utils.tokenizer import NGramTokenizer
 
 DATASET_PATH = 'spam_filter/data/spam.csv'
 
@@ -37,8 +38,14 @@ def metrics(labels, predictions):
         false_pos += int(labels[i] == 0 and predictions[i] == 1)
         false_neg += int(labels[i] == 1 and predictions[i] == 0)
 
+    precision = true_pos / (true_pos + false_pos)
+    recall = true_pos / (true_pos + false_neg)
+    f_score = 2 * precision * recall / (precision + recall)
     accuracy = (true_pos + true_neg) / (true_pos + true_neg + false_pos + false_neg)
 
+    print("Precision: ", precision)
+    print("Recall: ", recall)
+    print("F-score: ", f_score)
     print("Accuracy: ", accuracy)
 
 
@@ -49,3 +56,4 @@ if __name__ == '__main__':
 
     prediction_list = classifier.predict(test_dataset['message'])
     metrics(test_dataset['label'], prediction_list)
+

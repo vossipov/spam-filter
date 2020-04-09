@@ -4,6 +4,7 @@ from typing import List
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
+from nltk import ngrams
 import nltk
 
 TOKEN_RE = re.compile(r'\w+')
@@ -60,6 +61,5 @@ class StemmerTokenizer(Tokenizer):
 
 
 class NGramTokenizer(Tokenizer):
-
     def tokenize(self, text: str, min_token_size: int):
         pass
