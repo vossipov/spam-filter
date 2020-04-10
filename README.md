@@ -53,7 +53,7 @@ The classifier tries to choose the most probable class based on what it has lear
 #### Probabilistic model
 Let we have <img src="https://render.githubusercontent.com/render/math?math=C = \{C_{1},C_{2},...,C_{k}\}"> where <img src="https://render.githubusercontent.com/render/math?math=C"> set of unique classes and <img src="https://render.githubusercontent.com/render/math?math=M=\{w_{1},w_{2},..., w_{n}\}"> where <img src="https://render.githubusercontent.com/render/math?math=M">
 set of unique words in message, so now we want to determine which class the message belong to.
-<br>Using according to [Bayes' Theorem](#what-is-bayes-theorem) we got following:
+<br>According to [Bayes' Theorem](#what-is-bayes-theorem) we got following:
 
 <img src="https://render.githubusercontent.com/render/math?math=P(C_{k} | M)= \frac{P(C_{k})P(M|C_{k})}{P(M)}">
 
@@ -84,4 +84,4 @@ or
     $ python setup.py install
 ## References
 [[1]](https://www.aclweb.org/anthology/Q19-1004.pdf) Belinkov, Y. and Glass, J. (2019). Analysis Methods in Neural Language Processing: A Survey.Transactions of the Association for Computational Linguistics<br>
-[[2]](https://books.google.ru/books/about/Email_Spam_Filtering.html?id=h6AYzY-yWZ8C&redir_esc=y) Cormack, G. (2008). Email Spam Filtering: A Systematic Review.Foundations and Trends® in Information Retrieval
+[[2]](https://books.google.ru/books/about/Email_Spam_Filtering.html?id=h6AYzY-yWZ8C&redir_esc=y) Cormack, G. (2008). Email Spam Filtering: A Systematic Review.Foundations and TrendsÂ® in Information Retrieval
