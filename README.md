@@ -77,6 +77,8 @@ After all of the above discussions we have got the naive Bayes probability model
 ## Implementation
  Soon...
 ## Install
+
+    $ git clone https://github.com/vjaos/spam-filter.git
     $ pip install -r requirements.txt
     
 or
