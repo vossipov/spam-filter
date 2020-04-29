@@ -73,9 +73,8 @@ After all of the above discussions we have got the naive Bayes probability model
 <br>
 
    <img src="https://render.githubusercontent.com/render/math?math=\hat{c} = argmaxP(C_{k})\prod_{i = 1}^{n}{P(w_{i}|C_{k})}"> 
-
-## Implementation
- Soon...
+   
+   
 ## Install
 
     $ git clone https://github.com/vjaos/spam-filter.git
